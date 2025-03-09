@@ -1,0 +1,71 @@
+.input-component {
+    height: 56px;
+}
+
+.input {
+    height: 56px;
+    width: 100%;
+    position: absolute;
+    outline: none;
+    font-size: 16px;
+    padding: 16px 0 16px 16px;
+    border: 1px solid #938F99;
+    border-radius: 4px;
+    background: transparent;
+    transition: 0.1s ease;
+    z-index: 2;
+
+    &__wrapper {
+        position: relative;
+        line-height: 80px;
+    }
+
+    &:focus,
+    &:valid {
+        color: var(--primary-color);
+        border: 3px solid var(--primary-color);
+    }
+
+    &:focus + .label-line,
+    &:valid + .label-line {
+        color: var(--primary-color);
+        height: 30px;
+        line-height: 30px;
+        background-color: var(--label-line-color);
+        transform: translate(10px, -7px) scale(0.88);
+        z-index: 3;
+    }
+
+    &.error, &.error:focus {
+        border: 3px solid var(--error-color);
+    }
+
+    &.error:focus + .label-line,
+    &.error:valid + .label-line {
+        color: var(--error-color);
+    }
+
+    &__imgError {
+        position: absolute;
+        right: 15px;
+        top: 18px;
+    }
+
+    &__errorMessage {
+        position: absolute;
+        top: 58px;
+        color: var(--error-color);
+        line-height: 1;
+    }
+}
+
+.label-line {
+    position: absolute;
+    font-size: 16px;
+    top: -10px;
+    color: var(--input-label-color);
+    background-color: transparent;
+    padding: 0 16px;
+    transition: 0.2s ease;
+    pointer-events: none;
+}

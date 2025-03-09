@@ -1,1 +1,80 @@
-/* You can add global styles to this file, and also import other style files */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    //Static colors
+    --primary-color: #65558F;
+    --primary-alt-color: #D0BCFE;
+    --error-color: #B3261E;
+    --error-light-color: #F2B8B5;
+    --dark-color: #141218;
+    --light-color: #FEF7FF;
+    --gray-color: #938F99;
+    --dark-gray-color: #36343B;
+    --light-gray-color: #CAC4D0;
+    --dark-gray-alt-color: #49454F;
+
+    //Dynamic colors
+    --body-color: var(--light-color);
+    --button-color: var(--primary-color);
+    --button-text-color: white;
+    --link-color: var(--primary-color);
+    --label-line-color: var(--light-color);
+    --title-color: var(--dark-color);
+    --form-border-color: var(--light-gray-color);
+    --input-label-color: var(--dark-gray-alt-color);
+    --button-hover-color: var(--primary-alt-color);
+}
+
+[data-theme="dark"] {
+    --body-color: var(--dark-color);
+    --button-color: var(--primary-alt-color);
+    --button-text-color: var(--primary-color);
+    --link-color: var(--primary-alt-color);
+    --label-line-color: var(--dark-color);
+    --title-color: white;
+    --form-border-color: var(--dark-gray-alt-color);
+    --input-label-color: var(--light-gray-color);
+    --button-hover-color: var(--primary-color);
+    --error-color: var(--error-light-color);
+}
+
+body {
+    background-color: var(--body-color);
+    transition: 0.3s ease;
+}
+
+.button {
+    padding: 12px 24px;
+    border-radius: 100px;
+    border: none;
+    background: var(--button-color);
+    color: var(--button-text-color);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.2s ease;
+
+    &:hover {
+        background-color: var(--button-hover-color);
+        color: white;
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        background-color: var(--dark-gray-alt-color);
+        opacity: 0.7;
+    }
+}
+
+.link {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}

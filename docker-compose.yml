@@ -1,0 +1,17 @@
+services:
+    auth_app:
+        build: .
+        ports:
+            - "80:80"
+        environment:
+            - NODE_ENV=production
+        networks:
+            - auth_network
+        container_name: auth_app_container
+        volumes:
+            - .:/app
+        restart: always
+
+networks:
+    auth_network:
+        driver: bridge

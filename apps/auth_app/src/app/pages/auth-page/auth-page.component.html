@@ -1,0 +1,49 @@
+<div class="auth-page">
+    <div class="auth-page__header">
+        <app-theme-toggle [isDarkMode]="isDarkMode" (themeChange)="onThemeChange($event)"/>
+    </div>
+
+    <div class="auth-page__body">
+        <form class="auth-page__form" [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="auth-page__form-main">
+                <div class="auth-page__form-header">
+                    <img src="/images/main-image.svg" class="auth-page__form-img" alt="">
+                    <h1 class="auth-page__form-title">Sign In</h1>
+                </div>
+
+                <div class="auth-page__form-inputs">
+                    <app-input
+                        [error]="form.get('email')?.invalid && form.get('email')?.touched"
+                        [errorMessage]="getErrorMessage('email')"
+                        [theme]="currentTheme"
+                        formControlName="email"
+                        type="text" placeholder="Email"
+                    />
+
+                    <app-input
+                        [error]="form.get('password')?.invalid && form.get('password')?.touched"
+                        [errorMessage]="getErrorMessage('password')"
+                        [theme]="currentTheme"
+                        formControlName="password"
+                        type="password" placeholder="Password"
+                    />
+                </div>
+
+                <div class="auth-page__form-actions">
+                    <a routerLink="/forgot-password" class="link">Forgot password?</a>
+                    <button
+                        class="button auth-page__form-submit"
+                        type="submit"
+                        [disabled]="form.invalid || isLoading"
+                    >
+                        Submit
+                    </button>
+                </div>
+            </div>
+
+            <div class="auth-page__createAccount">
+                <a routerLink="/sign-up" class="link">Or create an account</a>
+            </div>
+        </form>
+    </div>
+</div>

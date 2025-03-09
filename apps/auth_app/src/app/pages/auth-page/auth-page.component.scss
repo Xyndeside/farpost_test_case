@@ -1,0 +1,73 @@
+.auth-page {
+    &__header {
+        display: flex;
+        justify-content: end;
+        padding: 16px 16px 16px 0;
+    }
+
+    &__body {
+        height: calc(100dvh - 68px);
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 0 1rem;
+    }
+
+    &__form {
+        max-height: 524px;
+
+        &, &-main, &-header, &-inputs {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &, &-main {
+            width: 100%;
+        }
+
+        &, &-header, &-actions {
+            align-items: center;
+        }
+
+        &-title {
+            font-weight: 500;
+            color: var(--title-color);
+        }
+
+        &-main {
+            max-width: 400px;
+            padding: 32px 40px 32px 32px;
+            border: 1px solid var(--form-border-color);
+            border-radius: 12px;
+            background: transparent;
+            gap: 32px;
+        }
+
+        &-header {
+            gap: 16px;
+        }
+
+        &-inputs {
+            gap: 32px;
+        }
+
+        &-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-left: 12px;
+        }
+
+        &-submit {
+            margin-right: -10px;
+        }
+    }
+
+    &__createAccount {
+        max-width: 400px;
+        width: 100%;
+        display: flex;
+        justify-content: end;
+        margin-top: 20px;
+    }
+}

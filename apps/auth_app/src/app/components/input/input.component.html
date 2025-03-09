@@ -1,0 +1,23 @@
+<div class="input-component">
+    <div class="input__wrapper">
+        <label [for]="placeholder"></label>
+        <input
+            [id]="placeholder"
+            [type]="type"
+            [class.error]="error"
+            [value]="value"
+            (input)="handleInput($event)"
+            (blur)="onTouched()"
+            class="input"
+            required
+        >
+
+        <div class="label-line">{{placeholder}}</div>
+
+        <div *ngIf="error" class="input__errorMessage">
+            <p>{{errorMessage}}</p>
+        </div>
+
+        <img *ngIf="error" [src]="getErrorIconSrc()" class="input__imgError" alt="Error">
+    </div>
+</div>
