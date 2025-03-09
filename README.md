@@ -10,7 +10,7 @@
 ## 🚀 Запуск через Docker
 1. **Склонируйте репозиторий**:
 ```bash
-   git clone https://github.com/ваш-аккаунт/farpost_test_case.git
+   git clone https://github.com/Xyndeside/farpost_test_case.git
    cd farpost_test_case
 ```
 
